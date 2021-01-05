@@ -17,12 +17,7 @@ li.calorie-step.active {
     color: red;
 
 }
-li.calorie-step:hover{
-    background-color: red;
-    color: white;
-    cursor: pointer;
-   
-}
+
 li.calorie-step{
     font-size: 16px;
 }
@@ -64,4 +59,52 @@ li.calorie-step {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+li.calorie-step:hover, li.calorie-step.active {
+    color: #1B1C25;
+    background: #EEEEEE 0% 0% no-repeat padding-box;
+    cursor: pointer;
+}
+li.calorie-step:hover i, li.calorie-step.active i {
+    color: #D14D1D;
+  
+}
+li.calorie-step i {
+    margin-right: 1.5em;
+}
+li.calorie-step {
+    padding: 0.4em 0;
+    border-radius: 25px;
+}
+li.calorie-step i {
+    margin: 0 1.5em 0 0.7em;
+}
+
+ul.options-list {
+   
+    padding: 0;
+}
+ul.options-list {
+    list-style: none;
+    padding-left: 0.7em;
+}
+.options-container {
+    border-left: 1px solid #7070702e;
+}
+.options-container {
+    padding: 0 2.5em;
+    border-left: 1px solid #7070702e;
+}
+.buttons-container a {
+    color: #3B3B3B;
+    font-size: 16px;
+    line-height: 25px;
+}
+.buttons-container a:hover {
+    color: #D14D1D;
+    cursor: pointer;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
 }
