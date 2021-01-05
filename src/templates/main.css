@@ -1,0 +1,67 @@
+.calculator-container{
+ font-family: 'Poppins';
+}
+
+.steps-container > div {
+    background-color: gainsboro;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+}
+
+.steps-container > div.active{
+
+ background-color: red;
+}
+li.calorie-step.active {
+    color: red;
+
+}
+li.calorie-step:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+   
+}
+li.calorie-step{
+    font-size: 16px;
+}
+ul.options-list {
+    list-style: none;
+}
+.left-container {
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+.steps-container > div {
+    font-size: 16px;
+    line-height: 25px;
+    color: #1B1C25;
+    padding: 0.4em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+}
+.steps-container > div.active {
+    background-color: #D14D1D;
+    color: white;
+}
+h2.title-steps {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #1B1C25;
+}
+li.calorie-step {
+    color: #1B1C25;
+    font-weight: normal;
+    opacity: 0.8;
+    line-height: 25px;
+}
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
