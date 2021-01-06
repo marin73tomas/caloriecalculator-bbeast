@@ -108,3 +108,7 @@ ul.options-list {
     display: flex;
     justify-content: space-between;
 }
+
+.buttons-container a[style*="pointer-events: none;"] {
+    color: #b5b5b5;
+}
