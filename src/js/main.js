@@ -2,7 +2,7 @@ import * as API from "./api.js";
 import firstStepOptions from "./firstStep.js";
 import secondStepOptions from "./secondStep.js";
 import thirdStepOptions from "./thirdStep.js";
-import { displayRanges } from "./fourStep.js";
+import * as fourStep from "./fourStep.js";
 
 const stepOptions = [
   { title: "My goal is to", options: firstStepOptions() },
@@ -18,16 +18,37 @@ const gatheredInfo = [
   { stepNumber: 3, optionSelected: null },
   { stepNumber: 4, optionSelected: null },
 ];
+function displayCalories() {
+  try {
+    let caloriesObject = fourStep.calculate(
+      gatheredInfo[1].optionSelected,
+      fourStep.getCurrentAge(),
+      fourStep.getCurrentWeight(),
+      fourStep.getCurrentHeight()
+    );
 
-const displayStepOptions = function (options=null, title = null) {
+    fourStep.changeCaloriesValue(caloriesObject.calories);
+    fourStep.changeCarbohydrateValue(caloriesObject.carbohydrate);
+    fourStep.changeProteinsValue(caloriesObject.protein);
+    fourStep.changeFatValue(caloriesObject.fat);
+  } catch (Error) {
+    alert(
+      "Error while calculating the calories, make sure age,weight and height are not empty."
+    );
+  }
+}
+const displayStepOptions = function (options = null, title = null) {
   let stepsContainer = document.querySelector("ul.options-list");
   let steps = stepsContainer.childNodes;
   let theTitle = document.querySelector("h2.title-steps");
   let optionSelected = gatheredInfo[currentStepNumber - 1].optionSelected;
 
   stepsContainer.innerHTML = "";
-  console.log(currentStepNumber)
+  console.log(currentStepNumber);
   if (currentStepNumber < 4) {
+    API.getNextButton().style.display = "block";
+    API.getResultsButton().style.display = "none";
+
     options.forEach((option, idx) => {
       let newLi = document.createElement("li");
 
@@ -48,11 +69,14 @@ const displayStepOptions = function (options=null, title = null) {
     if (optionSelected) {
       steps[optionSelected - 1].classList.add("active");
     }
-  }
-  else{
+  } else {
     //we are on step 4
-    stepsContainer.innerHTML = displayRanges()
-    
+    API.getNextButton().style.display = "none";
+    API.getResultsButton().style.display = "block";
+
+    stepsContainer.innerHTML = fourStep.displayRanges();
+
+    fourStep.setUp();
   }
 };
 
@@ -120,11 +144,32 @@ async function startCalculator() {
   API.disableButton(API.getBackButton());
   setUpBtns(API.getBackButton());
   setUpBtns(API.getNextButton());
- 
+  API.getResultsButton().addEventListener(
+    "click",
+    () => {
+      API.getResultsButton().style.display = "none";
+      API.getResetButton().style.display = "block";
+
+      displayCalories();
+    },
+    true
+  );
+  API.getResetButton().addEventListener(
+    "click",
+    () => {
+      API.getResultsButton().style.display = "block";
+      API.getResetButton().style.display = "none";
+      fourStep.changeCaloriesValue(0)
+      fourStep.changeCarbohydrateValue(0)
+      fourStep.changeProteinsValue(0)
+      fourStep.changeFatValue(0)
+
+      displayStepOptions();
+    },
+    true
+  );
 }
 
-
-  document.addEventListener("DOMContentLoaded", function (event) {
-    startCalculator();
-  });
-
+document.addEventListener("DOMContentLoaded", function (event) {
+  startCalculator();
+});

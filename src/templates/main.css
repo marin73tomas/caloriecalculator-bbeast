@@ -112,3 +112,76 @@ ul.options-list {
 .buttons-container a[style*="pointer-events: none;"] {
     color: #b5b5b5;
 }
+.calculator-container input[type=range]{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    height: 20px;
+    background: #EEEEEE;
+    border-radius: 50px;
+    overflow: hiden;  
+    margin-top: 8px  
+}
+.calculator-container input[type=range]::-webkit-slider-runnable-track{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    box-shadow: unset;
+    background: none;
+    height: 20px;
+}
+.calculator-container input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    border: none;
+    height: 32px;
+    width: 32px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.calculator-container input[type=range]::-moz-range-track {
+    appearance: none!important;
+    box-shadow: unset;
+    background: none;
+    height: 20px;
+}
+.calculator-container input[type=range]::-moz-range-thumb {
+    appearance: none!important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    border: none;
+    height: 32px;
+    width: 32px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.calculator-container input[type=range]::-moz-range-progress {
+     height: 20px;
+     border-radius: 50px;
+}
+.calculator-container .calculate-btn{
+    float: right;
+    margin-top: 2rem;
+    background-color: #d14d1d;
+    border-radius: 1px;
+    width: 221px;
+    height: 39px;
+}
+
+p.calculator {
+    opacity: 0.8;
+    color: #1B1C25;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.steps-container > div {
+   
+    background: linear-gradient(to bottom,#d14d1d 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: bottom left;
+    transition: all .5s ease-out;
+  }
+  .steps-container > div.active{
+    background-position: top left;
+    color: #fff;
+  }
+  
