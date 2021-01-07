@@ -42,8 +42,12 @@ const displayStepOptions = function (options = null, title = null) {
   let steps = stepsContainer.childNodes;
   let theTitle = document.querySelector("h2.title-steps");
   let optionSelected = gatheredInfo[currentStepNumber - 1].optionSelected;
-
+  stepsContainer.style.opacity = 0
+  theTitle.style.opacity = 0
+  setTimeout(function (){
   stepsContainer.innerHTML = "";
+  stepsContainer.style.opacity = 100
+  theTitle.style.opacity = 100
   console.log(currentStepNumber);
   if (currentStepNumber < 4) {
     API.getNextButton().style.display = "block";
@@ -78,6 +82,7 @@ const displayStepOptions = function (options = null, title = null) {
 
     fourStep.setUp();
   }
+}, 300)
 };
 
 const changeActiveStep = function (event) {

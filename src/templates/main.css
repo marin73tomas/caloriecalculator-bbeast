@@ -184,4 +184,9 @@ p.calculator {
     background-position: top left;
     color: #fff;
   }
-  
+  ul.options-list > li, ul.options-list i {
+    transition: all 0.2s ease-out;
+}
+.options-container ul,.options-container h2 {
+    transition: opacity 0.3s ease-out;
+}
