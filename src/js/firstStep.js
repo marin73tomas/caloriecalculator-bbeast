@@ -2,7 +2,9 @@
 
 export default function getOptions (){
     return [
-        'Gain Mass',
-        'Burn Fat'
+        'Gain Muscle',
+        'Get Lean',
+        'Get Fit',
+        
     ]
 }

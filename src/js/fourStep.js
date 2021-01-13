@@ -1,8 +1,5 @@
-export function styleRangeInputs() {
-    let ranges = document.querySelectorAll('input[type="range"]');
-  
-    for (let range of ranges) {
-      range.addEventListener("input",  function () {
+function updateStyleRangeInputs(){
+    try{
         var value = ((this.value - this.min) / (this.max - this.min)) * 100;
         this.style.background =
           "linear-gradient(to right, gray 0%, gray " +
@@ -10,7 +7,17 @@ export function styleRangeInputs() {
           "%,  #EEEEEE " +
           value +
           "%, #EEEEEE 100%)";
-      });
+  }catch(error){
+}
+      
+
+}
+
+export function styleRangeInputs() {
+    let ranges = document.querySelectorAll('input[type="range"]');
+  
+    for (let range of ranges) {
+      range.addEventListener("input", updateStyleRangeInputs.bind(this) );
     }
   }
   
@@ -40,7 +47,7 @@ export function styleRangeInputs() {
   export function getCurrentHeight() {
     return getHeightRange().value;
   }
-  export function getFactor(weight) {
+ /* export function getFactor(weight) {
     let factor = 1;
     let lbs = kgsToLbs(weight);
   
@@ -50,51 +57,20 @@ export function styleRangeInputs() {
     else factor = 1;
   
     return factor;
-  }
+  } */
+  export function getFactorOne(option){
+
+	if(option==1) return 1.3
+	else if (option==2) return 1.0
+	return 1.1
+}
+  export function getFactorTwo(option){
+
+	if(option==1) return 1.5
+	else if (option==2) return 0.9
+	return 1.0
+}
   
-  export function calculate(program,age,weight,height) {
-    
-    let factor = getFactor(weight);
-  
-    let calories = (10 * weight + 6.25 * height - 10 * age + 5) * factor;
-  
-    switch (program) {
-      case 1: //"12weeks"
-        return {
-          carbohydrate: Math.trunc((calories * 0.45) / 4),
-          protein: Math.trunc((calories * 0.35) / 4),
-          fat: Math.trunc((calories * 0.2) / 9),
-          calories: Math.trunc(calories),
-        };
-        break;
-      case 2: //"mass"
-        calories += 300;
-        return {
-          carbohydrate: Math.trunc((calories * 0.4) / 4),
-          protein: Math.trunc((calories * 0.4) / 4),
-          fat: Math.trunc((calories * 0.2) / 9),
-          calories: Math.trunc(calories),
-        };
-        break;
-      case 3: //"xtremeshred"
-        calories -= 300;
-        return {
-          carbohydrate: Math.trunc((calories * 0.2) / 4),
-          protein: Math.trunc((calories * 0.5) / 4),
-          fat: Math.trunc((calories * 0.3) / 9),
-          calories: Math.trunc(calories),
-        };
-        break;
-      case 4: //"beastnation"
-        return {
-          carbohydrate: Math.trunc((calories * 0.45) / 4),
-          protein: Math.trunc((calories * 0.35) / 4),
-          fat: Math.trunc((calories * 0.2) / 9),
-          calories: Math.trunc(calories),
-        };
-        break;
-    }
-  }
   
   export function cmToFeetInches(height) {
     let feet = Math.trunc(height / 30.48);
@@ -116,7 +92,7 @@ export function styleRangeInputs() {
   }
   export function changeCaloriesValue(val) {
     let total = document.querySelector("#total");
-    total.innerHTML = val + " calories";
+    total.innerHTML = val + " Kcal";
   }
   export function changeCarbohydrateValue(val) {
     let carbo = document.querySelector("#carbo");
@@ -140,7 +116,7 @@ export function styleRangeInputs() {
     let currentUnit = 'Imperial'
     let calcValue = calculator.querySelector(".value");
     let calcUnit = calculator.querySelector(".unit");
-    let name = element.previousElementSibling.firstChild.nodeValue; //label of the range
+    let name = element.previousElementSibling.firstElementChild.innerHTML; //label of the range
     name = name.toLowerCase().trim();
   
     switch (name) {
@@ -167,6 +143,8 @@ export function styleRangeInputs() {
         calcUnit.innerHTML = "";
         break;
     }
+    console.log('changing style')
+    updateStyleRangeInputs.call(element)
   }
   
   export function setUpRange(element) {
@@ -208,7 +186,6 @@ export function setUp(program,age,weight,height) {
    
   }
  export function displayRanges(){
-    return "<form id='reset-form'> <p class='calculator'>Age <span class='unit'> </span>  <span class='value' style=' font-weight:bold'> </span>  </p><input class='range' type='range' min='0' max='100' id='age' value='0'><p class='calculator'>Weight <span class='unit'> </span> <span  class='value' style=' font-weight:bold'></span> </p><input type='range' min='23' max='226' id='peso' value='23' class='range2' step='0.1'> <p class='calculator'>Height <span class='unit'> </span><span  class='value' style=' font-weight:bold'></span> </p><input type='range' min='92' max='243' id='altura' value='92' class='range3'> </form>"
+    return "<form id='reset-form'> <p class='calculator'><span style='display:none'> Age </span> My age is <span class='container-unit' id='age-box'> <span class='unit'> </span>  <span class='value' style=' font-weight:bold'> </span> </span>  </p><input class='range' type='range' min='0' max='100' id='age' value='0'><p class='calculator'><span style='display:none'> Weight </span> My weight is <span class='container-unit' id='weight-box'> <span class='unit'> </span> <span  class='value' style=' font-weight:bold'></span> </span> </p><input type='range' min='23' max='226' id='peso' value='23' class='range2' step='0.1'> <p class='calculator'> <span style='display:none'> Height </span> My height is <span class='container-unit' id='height-box'> <span class='unit'> </span><span  class='value' style=' font-weight:bold'></span> </span> </p><input type='range' min='92' max='243' id='altura' value='92' class='range3'> </form>"
 
  }
-  

@@ -20,6 +20,7 @@ export  function enableButton(btn) {
 
 
 
+
 export function checkIfOptionIsSelected (optionNumber,gatheredInfo) {
  
   return (
@@ -38,5 +39,3 @@ export function activateStepCircle(stepNumber){
 export function deactiveStepCircle (stepNumber){
     document.querySelector(`.circle-${stepNumber}`).classList.remove('active')
 }
-
-
