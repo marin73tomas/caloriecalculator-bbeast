@@ -1,0 +1,399 @@
+.calculator-container{
+ font-family: 'Poppins';
+}
+
+.steps-container > div {
+    background-color: gainsboro;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+}
+
+.steps-container > div.active{
+
+ background-color: red;
+}
+li.calorie-step.active {
+    color: red;
+
+}
+
+li.calorie-step{
+    font-size: 16px;
+}
+ul.options-list {
+    list-style: none;
+}
+.left-container {
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+.steps-container > div {
+    font-size: 16px;
+    line-height: 25px;
+    color: #1B1C25;
+    padding: 0.4em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+}
+.steps-container > div.active {
+    background-color: #D14D1D;
+    color: white;
+}
+h2.title-steps {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #1B1C25;
+}
+li.calorie-step {
+    color: #1B1C25;
+    font-weight: normal;
+    opacity: 0.8;
+    line-height: 25px;
+}
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+li.calorie-step:hover, li.calorie-step.active {
+    color: #1B1C25;
+    background: #EEEEEE 0% 0% no-repeat padding-box;
+    cursor: pointer;
+}
+li.calorie-step:hover i, li.calorie-step.active i {
+    color: #D14D1D;
+  
+}
+li.calorie-step i {
+    margin-right: 1.5em;
+}
+li.calorie-step {
+    padding: 0.4em 0;
+    border-radius: 25px;
+}
+li.calorie-step i {
+    margin: 0 1.5em 0 0.7em;
+}
+
+ul.options-list {
+   
+    padding: 0;
+}
+ul.options-list {
+    list-style: none;
+    padding-left: 0.7em;
+}
+.options-container {
+    border-left: 1px solid #7070702e;
+}
+.options-container {
+    padding: 0 2.5em;
+    border-left: 1px solid #7070702e;
+}
+.buttons-container a {
+    color: #3B3B3B;
+    font-size: 16px;
+    line-height: 25px;
+}
+.buttons-container a:hover {
+    color: #D14D1D;
+    cursor: pointer;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-container a[style*="pointer-events: none;"] {
+    color: #b5b5b5;
+}
+.calculator-container input[type=range]{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    height: 20px;
+    background: #EEEEEE;
+    border-radius: 50px;
+    overflow: hiden;  
+    margin-top: 8px  
+}
+.calculator-container input[type=range]::-webkit-slider-runnable-track{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    box-shadow: unset;
+    background: none;
+    height: 20px;
+}
+.calculator-container input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none!important;
+    appearance: none!important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    border: none;
+    height: 32px;
+    width: 32px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.calculator-container input[type=range]::-moz-range-track {
+    appearance: none!important;
+    box-shadow: unset;
+    background: none;
+    height: 20px;
+}
+.calculator-container input[type=range]::-moz-range-thumb {
+    appearance: none!important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    border: none;
+    height: 32px;
+    width: 32px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.calculator-container input[type=range]::-moz-range-progress {
+     height: 20px;
+     border-radius: 50px;
+}
+.calculator-container .calculate-btn{
+    float: right;
+    margin-top: 2rem;
+    background-color: #d14d1d;
+    border-radius: 1px;
+    width: 221px;
+    height: 39px;
+}
+
+p.calculator {
+    opacity: 0.8;
+    color: #1B1C25;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.steps-container > div {
+   
+    background: linear-gradient(to bottom,#d14d1d 50%, #EEEEEE 50%);
+    background-size: 100% 200%;
+    background-position: bottom left;
+    transition: all .5s ease-out;
+  }
+  .steps-container > div.active{
+    background-position: top left;
+    color: #fff;
+  }
+  ul.options-list > li, ul.options-list i, .left-container {
+    transition: all 0.2s ease-out;
+}
+.options-container ul,.options-container h2,  {
+    transition: opacity 0.3s ease-out;
+}
+.left-container {
+    opacity: 0;
+}
+ul.options-list {
+    margin: 0;
+}
+.steps-container > div{
+padding: 20px;
+}
+
+.steps-container > div {
+    font-size: 16px;
+    line-height: 25px;
+    color: #1B1C25;
+    padding: 20px;
+
+}
+
+.left-container {
+ 
+    grid-template-columns: 55px auto;
+}
+
+ul.options-list {
+    margin: 0;
+}
+
+.left-container {
+    height: 430px;
+}
+ul.options-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ul.options-list > li {
+    margin: 5px 0;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+}
+.buttons-container > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+p.calculator {
+    margin: 20px 0;
+}
+
+span.value {
+    font-weight: bold;
+    color: #1B1C25;
+    font-size: 16px;
+}
+span.unit {
+    color: #1B1C25;
+    font-size: 12px;
+    opacity: 0.6;
+}
+span.container-unit {
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    width: 75px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+div#line-between {
+    all: unset;
+    position: relative;
+    width: 2px;
+    height: 100%;
+    background-color: #EEEEEE;
+    z-index: 1;
+    left: calc( 50% - 10px);
+    top: -230px;
+}
+.steps-container > div:not(#line-between) {
+    z-index: 2;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid #D14D1D;
+  border-right: 1.1em solid #D14D1D;
+  border-bottom: 1.1em solid #D14D1D;
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.steps-container > div {
+    margin: 15px 0;
+  
+}
+
+div#line-between {
+    height: 200px;
+}
+h2.title-steps {
+    opacity: 0.8 !important;
+}
+
+@media (max-width: 768px){
+    .left-container {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.steps-container {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 80px !important;
+    justify-content: space-between!important;
+    margin: 0 5% !important;
+}
+div#line-between {
+    display: none !important;
+}
+.options-container {
+    padding: 0 1em !important;
+    border: none !important;
+}
+h2.title-steps {
+    font-size: 16px !important;
+    line-height: 25px !important;
+}
+li.calorie-step {
+    font-size: 14px !important;
+    line-height: 21px !important;
+}
+ul.options-list {
+    padding: 0 !important;
+}
+.buttons-container {
+    width: 100% !important;
+    padding: 0 10% 0 0 !important;
+}
+.buttons-container a {
+    font-size: 16px !important;
+    line-height: 25px !important;
+}
+.left-container {
+    height: 440px !important;
+}
+p.calculator{
+    font-size: 18px !important;
+}
+.steps-container::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #ededed;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    max-width: 90%;
+}
+h1#total {
+    font-size: 40px !important;
+    line-height: 50px !important;
+}
+h3.your-result {
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
+h3.text-right-300 {
+    font-size: 14px !important;
+    line-height: 21px !important;
+}
